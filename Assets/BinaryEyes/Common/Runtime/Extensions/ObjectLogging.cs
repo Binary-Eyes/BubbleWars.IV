@@ -1,7 +1,7 @@
 using System;
 using Debug = UnityEngine.Debug;
 
-namespace BinaryEyes.Core.Extensions
+namespace BinaryEyes.Common.Extensions
 {
     public static class ObjectLogging
     {

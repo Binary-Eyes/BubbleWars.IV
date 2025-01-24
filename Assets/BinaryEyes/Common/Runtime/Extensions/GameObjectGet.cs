@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace BinaryEyes.Core.Extensions
+namespace BinaryEyes.Common.Extensions
 {
     public static class GameObjectGet
     {

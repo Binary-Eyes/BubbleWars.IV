@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using Random = UnityEngine.Random;
 
-namespace BinaryEyes.Core.Extensions
+namespace BinaryEyes.Common.Extensions
 {
     public static class ListPop
     {
