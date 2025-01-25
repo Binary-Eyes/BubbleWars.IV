@@ -63,6 +63,7 @@ Shader "Tazo/BubbleSimple"
 				float4 texcoord : TEXCOORD0;
 				float3 normal : NORMAL;
 				fixed4 color : COLOR;
+				UNITY_VERTEX_INPUT_INSTANCE_ID 
 			};
 
 			struct v2f
@@ -72,6 +73,7 @@ Shader "Tazo/BubbleSimple"
 				float2 uv	: TEXCOORD2;
 				float4 uv_object : TEXCOORD1;
 				fixed4 color : COLOR;
+				UNITY_VERTEX_OUTPUT_STEREO
 			};
 			uniform float rimWidth;
 			
@@ -94,6 +96,10 @@ Shader "Tazo/BubbleSimple"
 			v2f vert(appdata v)
 			{
 				v2f o;
+				UNITY_SETUP_INSTANCE_ID(v); //Insert
+				UNITY_INITIALIZE_OUTPUT(v2f, o); //Insert
+				UNITY_INITIALIZE_VERTEX_OUTPUT_STEREO(o); //Insert
+
 				float3 worldNorm = normalize(unity_WorldToObject[0].xyz * v.normal.x + unity_WorldToObject[1].xyz * v.normal.y + unity_WorldToObject[2].xyz * v.normal.z);
 				worldNorm = mul((float3x3)UNITY_MATRIX_V, worldNorm);
 				float3 viewDir = normalize(ObjSpaceViewDir(v.vertex));

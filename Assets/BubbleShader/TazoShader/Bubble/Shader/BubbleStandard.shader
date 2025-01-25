@@ -5,17 +5,11 @@ Shader "Tazo/BubbleStandard"
 		[Header(Base)]
 		_BaseTex3("HightLight(R)", 2D) = "black" {}
 		_pow("POW", Range(0.0, 20.0)) = 1
-		//[Header(NoiseDeform)]
-
-		//_deformX("DeformX", Range(0, 10)) = 0
-		//_deformY("DeformY", Range(0, 10)) = 0
-		//_deform_strength("Deform Strength", Range(0, 360)) = 1
-		
+	
 		[Header(Mat)]
 		_MColor("Mat Color", Color) = (0.5,0.5,0.5,1)
 		[NoScaleOffset]_MatCap ("MatCap which has alpha (RGBA)", 2D) = "white" {}
 		
-
 		_powh("HightLight POW", Range(0.0, 20.0)) = 1
 		[Header(Rim)]
 		_RimColor("Rim Color", Color) = (1,1,1,1)
@@ -27,23 +21,17 @@ Shader "Tazo/BubbleStandard"
 		_tile("Tile", Range(0.0, 20.0)) = 1
 		_tileOffsetX("OffsetX", Range(0, 1)) = 0
 		_tileOffsetY("OffseeY", Range(0, 1)) = 0
+		
 		[Header(Distortion)]
 		[NoScaleOffset]_ProjectUV("UV Dis(R)", 2D) = "black" {}
 		_tileUV("UV Dis Tile", Range(0.0, 20.0)) = 1
 		_flow_offset("flow_offset", Range(-10, 10)) = 0
 		_flow_strength("flow_strength", Range(-10, 10)) = 0.5
-	
-
 	}
 	
 	Subshader
 	{
 		Tags { "Queue" = "Transparent+1" "IgnoreProjector" = "True" "RenderType" = "Transparent" }
-		
-
-
-
-//shell
 		Pass
 		{
 			Cull Back
@@ -61,6 +49,7 @@ Shader "Tazo/BubbleStandard"
 				float4 texcoord : TEXCOORD0;
 				float3 normal : NORMAL;
 				fixed4 color : COLOR;
+				UNITY_VERTEX_INPUT_INSTANCE_ID 
 			};
 
 			struct v2f
@@ -70,6 +59,7 @@ Shader "Tazo/BubbleStandard"
 				float2 uv	: TEXCOORD2;
 				float4 uv_object : TEXCOORD1;
 				fixed4 color : COLOR;
+				UNITY_VERTEX_OUTPUT_STEREO
 			};
 			uniform float rimWidth;
 			
@@ -86,25 +76,23 @@ Shader "Tazo/BubbleStandard"
 			float _tileOffsetX;
 			float _tileOffsetY;
 			float _powh;
-			//float _deform_strength;
-			//float _deformX;
-			//float _deformY;
+
 			v2f vert(appdata v)
 			{
 				v2f o;
+				UNITY_SETUP_INSTANCE_ID(v); //Insert
+				UNITY_INITIALIZE_OUTPUT(v2f, o); //Insert
+				UNITY_INITIALIZE_VERTEX_OUTPUT_STEREO(o); //Insert
+
 				float3 worldNorm = normalize(unity_WorldToObject[0].xyz * v.normal.x + unity_WorldToObject[1].xyz * v.normal.y + unity_WorldToObject[2].xyz * v.normal.z);
-				worldNorm = mul((float3x3)UNITY_MATRIX_V, worldNorm);
-				float3 viewDir = normalize(ObjSpaceViewDir(v.vertex));
+				float3 viewDir = float3(0,0,1);
 				float dotProduct = 1 - dot(v.normal, viewDir);
 				o.color.r = smoothstep(1 - rimWidth, 1.0, dotProduct);
 				o.color.g = dotProduct;
 				o.cap.xy = worldNorm.xy * 0.5 + 0.5;
 				o.cap.z = 1 - abs(v.normal.y);
 				o.cap.w = v.color.a;
-
-				//float4 move = float4(_deformX, _deformY,0,0);
-				//float n = tex2Dlod(_BaseTex3, o.cap + move* _Time.y).r;
- 				o.pos = UnityObjectToClipPos(v.vertex /*+ v.normal * _deform_strength * n*/);
+ 				o.pos = UnityObjectToClipPos(v.vertex);
 				
 				o.uv = TRANSFORM_TEX(v.texcoord, _BaseTex3);
 				o.uv_object = v.vertex*0.5+0.5;
@@ -119,21 +107,13 @@ Shader "Tazo/BubbleStandard"
 
 			float4 frag(v2f i) : SV_Target
 			{
-
 				float2 offset   = float2(_tileOffsetX, _tileOffsetY);
 				fixed4 t1 = tex2D(_ProjectUV, (frac(_Time.y * _flow_offset) + i.uv_object.rb * _tileUV));
 				fixed4 t2 = tex2D(_ProjectUV, (frac(_Time.y * _flow_offset) + i.uv * _tileUV * 0.5));
 				fixed4 p1 = tex2D(_Project, offset+i.uv_object.rb * _tile + t1 * _flow_strength);
 				fixed4 p2 = tex2D(_Project, offset+i.uv * _tile * 0.5 + t2 * _flow_strength);
-
-
-				
-
 				fixed4 mc1 = tex2D(_MatCap, i.cap.xy);
-
-			
 				fixed4 mc = saturate(mc1);
-				
 				fixed4 mt = tex2D(_BaseTex3, i.cap.xy + t1 * _flow_strength);
 				fixed mtp = pow(mt.r, _pow);
 				fixed highlight = pow(mc.a, _powh);
@@ -145,8 +125,6 @@ Shader "Tazo/BubbleStandard"
 			}
 			ENDCG
 		}
-
-		
 	}
 	
 	Fallback "VertexLit"
