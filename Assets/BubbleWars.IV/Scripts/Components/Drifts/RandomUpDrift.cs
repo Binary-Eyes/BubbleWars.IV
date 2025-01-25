@@ -1,4 +1,4 @@
-using BubbleWarIV.Components;
+using BubbleWarEpIV.Components;
 using UnityEngine;
 
 namespace BubbleWarsEp4.Components
@@ -12,7 +12,7 @@ namespace BubbleWarsEp4.Components
         public float PlayerBiasStrength = 10.0f;
         public float RotationSpeed = 30f;
         public float Lifetime = 10f;
-        
+
         private Vector3 _driftDirection;
         private float _timeLeft;
 
@@ -36,13 +36,7 @@ namespace BubbleWarsEp4.Components
 
             _timeLeft += Time.deltaTime;
             if (_timeLeft >= Lifetime)
-                Destroy();
-        }
-
-        private void Destroy()
-        {
-            // Add effects here, like a pop sound or particle system (optional)
-            Destroy(gameObject);
+                GetComponent<Bubble>().Pop();
         }
     }
 }

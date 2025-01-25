@@ -2,7 +2,7 @@ using BinaryEyes.Common;
 using UnityEngine;
 using UnityEngine.XR.Hands;
 
-namespace BubbleWarIV.Components
+namespace BubbleWarEpIV.Components
 {
     public sealed class Headset
         : SingletonBehaviour<Headset>

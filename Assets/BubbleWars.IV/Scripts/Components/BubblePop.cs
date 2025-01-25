@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace BubbleWarIV.Components
+namespace BubbleWarEpIV.Components
 {
     public sealed class BubblePop
         : MonoBehaviour
