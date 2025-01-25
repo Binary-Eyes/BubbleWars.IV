@@ -9,7 +9,7 @@ namespace BinaryEyes.Common.MenuItems
     /// </summary>
     public static class ToggleSelectedGameObjects
     {
-        [MenuItem("Eyeviation/Scene/Toggle Game Objects")]
+        [MenuItem("Binary Eyes/Scene/Toggle Game Objects")]
         public static void Perform()
         {
             Undo.RecordObjects(Selection.objects, "toggle_game_objects");

@@ -9,7 +9,7 @@ namespace BinaryEyes.Common.MenuItems
     /// </summary>
     public static class ResetSelectedTransforms
     {
-        [MenuItem("Eyeviation/Scene/Reset Selected Transforms")]
+        [MenuItem("Binary Eyes/Scene/Reset Selected Transforms")]
         public static void Perform()
         {
             Undo.RecordObjects(Selection.objects, "reset_selected_transforms");

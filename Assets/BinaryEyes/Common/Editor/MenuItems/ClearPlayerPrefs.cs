@@ -5,7 +5,7 @@ namespace BinaryEyes.Common.MenuItems
 {
     public static class ClearPlayerPrefs
     {
-        [MenuItem("Eyeviation/Editor/Clear PlayerPrefs")]
+        [MenuItem("Binary Eyes/Editor/Clear PlayerPrefs")]
         public static void Perform()
         {
             Debug.Log("Clearing PlayerPrefs");

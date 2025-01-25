@@ -10,22 +10,22 @@ namespace BinaryEyes.Common.MenuItems
     /// </summary>
     public static class OpenCommonFolder
     {
-        [MenuItem("Eyeviation/Editor/Open Directory/Persistent Data Path", false, -90_000)]
+        [MenuItem("Binary Eyes/Editor/Open Directory/Persistent Data Path", false, -90_000)]
         public static void PersistentDataPath() => OpenOrCreate(Application.persistentDataPath);
 
-        [MenuItem("Eyeviation/Editor/Open Directory/Console Log Path")]
+        [MenuItem("Binary Eyes/Editor/Open Directory/Console Log Path")]
         public static void ConsoleLogPath() => OpenFile(Application.consoleLogPath);
 
-        [MenuItem("Eyeviation/Editor/Open Directory/Data Path")]
+        [MenuItem("Binary Eyes/Editor/Open Directory/Data Path")]
         public static void DataPath() => OpenOrCreate(Application.dataPath);
 
-        [MenuItem("Eyeviation/Editor/Open Directory/Streaming Assets Path")]
+        [MenuItem("Binary Eyes/Editor/Open Directory/Streaming Assets Path")]
         public static void StreamingAssetsPath() => OpenOrCreate(Application.streamingAssetsPath);
 
-        [MenuItem("Eyeviation/Editor/Open Directory/Temporary Cache Path")]
+        [MenuItem("Binary Eyes/Editor/Open Directory/Temporary Cache Path")]
         public static void TemporaryCachePath() => OpenOrCreate(Application.temporaryCachePath);
 
-        [MenuItem("Eyeviation/Editor/Open Directory/Default Cache Path")]
+        [MenuItem("Binary Eyes/Editor/Open Directory/Default Cache Path")]
         public static void DefaultCachePath() => OpenOrCreate(Caching.defaultCache.path);
 
         private static void OpenFile(string path)
