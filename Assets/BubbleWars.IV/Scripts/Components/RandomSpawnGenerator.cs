@@ -22,20 +22,32 @@ namespace BubbleWarIV.Components
             var count = SpawnerCount.GetRandom();
             for (var i = 0; i < count; i++)
             {
-                var radius = Radius.GetRandom();
-                var startPosition = Random.insideUnitCircle*radius;
-                var spawnPosition = new Vector3(startPosition.x, 50.0f, startPosition.y);
-                var ray = new Ray(spawnPosition, Vector3.down);
-                if (!Physics.Raycast(ray, out var hitInfo))
-                {
-                    Debug.LogWarning("failed to locate spawn point in location");
+                var hitInfo = GetSpawnPoint();
+                if (hitInfo == null)
                     continue;
-                }
 
                 var spawner = Instantiate(SpawnerPrefab).SetName($"Spawner ({i})");
-                spawner.transform.position = hitInfo.point;
-                spawner.transform.forward = hitInfo.normal;
+                spawner.transform.position = hitInfo.Value.point;
+                spawner.transform.forward = hitInfo.Value.normal;
             }
+        }
+
+        private RaycastHit? GetSpawnPoint()
+        {
+            var radius = Radius.GetRandom();
+            var startPosition = Random.insideUnitCircle*radius;
+            var spawnPosition = new Vector3(startPosition.x, 50.0f, startPosition.y);
+            var ray = new Ray(spawnPosition, Vector3.down);
+            var count = 0;
+            while (count < 100)
+            {
+                count += 1;
+                if (Physics.Raycast(ray, out var hitInfo))
+                    return hitInfo;
+            }
+
+            Debug.LogWarning("failed to locate spawn point in location");
+            return null;
         }
     }
 }

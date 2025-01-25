@@ -44092,7 +44092,7 @@ MonoBehaviour:
   Delay: 3
   Radius:
     Min: 3
-    Max: 5
+    Max: 6
   SpawnerCount:
     Min: 15
     Max: 30
