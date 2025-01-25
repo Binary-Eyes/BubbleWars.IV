@@ -1,7 +1,7 @@
 using BinaryEyes.Common.Extensions;
 using UnityEngine;
 
-namespace BubbleWarEpIV.Components
+namespace BubbleWarEp4.Components
 {
     public sealed class GameHand
         : MonoBehaviour

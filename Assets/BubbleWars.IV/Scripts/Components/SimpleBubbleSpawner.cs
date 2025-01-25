@@ -2,7 +2,7 @@ using System.Collections;
 using BinaryEyes.Common.Data;
 using UnityEngine;
 
-namespace BubbleWarEpIV.Components
+namespace BubbleWarEp4.Components
 {
     public sealed class SimpleBubbleSpawner
         : MonoBehaviour

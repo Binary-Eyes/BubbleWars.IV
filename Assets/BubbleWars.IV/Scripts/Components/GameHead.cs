@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.Events;
 
-namespace BubbleWarEpIV.Components
+namespace BubbleWarEp4.Components
 {
     public sealed class GameHead
         : MonoBehaviour

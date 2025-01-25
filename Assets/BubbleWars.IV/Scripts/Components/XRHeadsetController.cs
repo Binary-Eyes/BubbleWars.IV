@@ -2,7 +2,7 @@ using BinaryEyes.Common.Extensions;
 using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit;
 
-namespace BubbleWarEpIV.Components
+namespace BubbleWarEp4.Components
 {
     public sealed class XRHeadsetController
         : MonoBehaviour
