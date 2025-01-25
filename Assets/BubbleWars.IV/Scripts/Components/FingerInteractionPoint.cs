@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace BubbleWarEp4.Components
+namespace BubbleWarsEp4.Components
 {
     public sealed class FingerInteractionPoint
         : MonoBehaviour

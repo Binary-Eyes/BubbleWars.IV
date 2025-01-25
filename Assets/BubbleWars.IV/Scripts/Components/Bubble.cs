@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using BinaryEyes.Common.Extensions;
 using UnityEngine;
 
-namespace BubbleWarEp4.Components
+namespace BubbleWarsEp4.Components
 {
     public sealed class Bubble
         : MonoBehaviour
@@ -10,14 +10,15 @@ namespace BubbleWarEp4.Components
         public static readonly List<Bubble> Bubbles = new();
         public bool IsPopped { get; private set; }
 
-        public void Pop()
+        public bool Pop()
         {
             if (IsPopped)
-                return;
+                return false;
 
             this.LogMessage("Popping");
             IsPopped = true;
             Destroy(gameObject);
+            return true;
         }
 
         private void Awake()

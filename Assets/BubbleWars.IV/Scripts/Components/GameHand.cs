@@ -1,19 +1,30 @@
 using BinaryEyes.Common.Extensions;
 using UnityEngine;
+using UnityEngine.Events;
 
-namespace BubbleWarEp4.Components
+namespace BubbleWarsEp4.Components
 {
     public sealed class GameHand
         : MonoBehaviour
     {
         public string FingerTipLayer = "FingerTips";
+        public HandDisplay Display;
         public FingerInteractionPoint[] InteractionPoints;
+        public UnityEvent BubblePopped;
 
         private void OnTriggerEnter(Collider other)
         {
             var bubble = other.GetComponentInParent<Bubble>();
-            if (bubble)
-                bubble.Pop();
+            if (!bubble)
+                return;
+
+            if (!bubble.Pop())
+                return;
+
+            if (Display)
+                Display.AddToBubbleBar(0.1f);
+
+            BubblePopped.Invoke();
         }
 
         private void Start()

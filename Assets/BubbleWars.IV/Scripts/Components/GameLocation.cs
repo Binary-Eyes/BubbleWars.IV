@@ -1,6 +1,6 @@
 using BinaryEyes.Common;
 
-namespace BubbleWarEp4.Components
+namespace BubbleWarsEp4.Components
 {
     public sealed class GameLocation
         : SingletonBehaviour<GameLocation>

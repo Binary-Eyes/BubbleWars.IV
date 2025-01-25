@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.Events;
 
-namespace BubbleWarEp4.Components
+namespace BubbleWarsEp4.Components
 {
     public sealed class GameHead
         : MonoBehaviour
@@ -12,6 +12,7 @@ namespace BubbleWarEp4.Components
         {
             HitByBubble?.Invoke(other);
             other.GetComponent<Bubble>().Pop();
+            Headset.Instance.LeftHand.Display.AddToBubbleBar(-0.02f);
         }
     }
 }

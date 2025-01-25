@@ -3,7 +3,7 @@ using BinaryEyes.Common.Extensions;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-namespace BubbleWarEp4.Components
+namespace BubbleWarsEp4.Components
 {
     public sealed class Preloader
         : MonoBehaviour

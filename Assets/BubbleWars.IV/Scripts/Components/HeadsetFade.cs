@@ -5,7 +5,7 @@ using BinaryEyes.Common.Extensions;
 using UnityEngine;
 using Event = BinaryEyes.Common.Data.Event;
 
-namespace BubbleWarEp4.Components
+namespace BubbleWarsEp4.Components
 {
     public sealed class HeadsetFade
         : MonoBehaviour
