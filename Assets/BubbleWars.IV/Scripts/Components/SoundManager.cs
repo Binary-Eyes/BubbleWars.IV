@@ -12,30 +12,41 @@ namespace BubbleWarsEp4.Components
         private readonly List<AudioSource> _sources = new(30);
         public AudioClip[] BubblePops;
 
-        public void PlayBubblePop()
-            => PlaySound(BubblePops.GetRandom());
+        public void PlayBubblePop(Transform location)
+        {
+            var source = PlaySound(BubblePops.GetRandom());
+            source.transform.position = location.position;
+        }
 
-        public void PlaySound(AudioClip clip)
+        public AudioSource PlaySound(AudioClip clip)
         {
             var source = _sources.FirstOrDefault(entry => !entry.isPlaying);
             if (!source)
-                return;
+                _sources.Add(source = GenerateSource());
 
             source.clip = clip;
             source.Play();
+            return source;
         }
 
         protected override void Awake()
         {
             base.Awake();
             for (var i = 0; i < 30; i++)
-            {
-                var sourceEntity = new GameObject("AudioSource");
-                var source = sourceEntity.AddComponent<AudioSource>();
-                source.loop = false;
-                source.playOnAwake = false;
-                _sources.Add(source);
-            }
+                _sources.Add(GenerateSource());
+        }
+
+        private static AudioSource GenerateSource()
+        {
+            var sourceEntity = new GameObject("AudioSource");
+            var source = sourceEntity.AddComponent<AudioSource>();
+            source.loop = false;
+            source.playOnAwake = false;
+
+#if !UNITY_EDITOR
+            source.spatialize = true;
+#endif
+            return source;
         }
     }
 }

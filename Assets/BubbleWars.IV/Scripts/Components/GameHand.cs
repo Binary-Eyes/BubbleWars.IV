@@ -24,7 +24,7 @@ namespace BubbleWarsEp4.Components
             if (Display)
                 Display.AddToBubbleBar(0.1f);
 
-            SoundManager.Instance.PlayBubblePop();
+            SoundManager.Instance.PlayBubblePop(other.transform);
             BubblePopped.Invoke();
         }
 

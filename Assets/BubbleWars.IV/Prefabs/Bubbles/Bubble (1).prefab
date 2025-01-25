@@ -131,9 +131,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 28bb9d7f93cc4414a8ffd0f881e444f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  UpSpeed: 0.35
+  UpSpeed: 0.325
   DriftSpeed: 0.4
   DriftRange: {x: 5, y: 10}
   PlayerBiasStrength: 30
-  RotationSpeed: 50
-  Lifetime: 10
+  RotationSpeed:
+    Min: 60
+    Max: 90
+  Lifetime:
+    Min: 8
+    Max: 14
