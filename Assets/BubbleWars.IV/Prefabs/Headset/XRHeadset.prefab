@@ -3281,7 +3281,7 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
-  _fadeTime: 5
+  _fadeTime: 3
 --- !u!1 &7958794829261298828
 GameObject:
   m_ObjectHideFlags: 0

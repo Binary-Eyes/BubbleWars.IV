@@ -25,6 +25,7 @@ namespace BubbleWarIV.Components
             yield return SceneManager.LoadSceneAsync(LocationScene, LoadSceneMode.Additive);
             yield return new WaitUntil(() => GameLocation.Exists);
 
+            yield return new WaitForSeconds(1.0f);
             headset.Fade.TurnTransparent();
             SceneManager.SetActiveScene(GameLocation.Instance.gameObject.scene);
             SceneManager.UnloadSceneAsync(gameObject.scene);
