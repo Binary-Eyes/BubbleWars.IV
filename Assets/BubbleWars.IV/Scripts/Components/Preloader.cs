@@ -1,6 +1,7 @@
 using System.Collections;
 using BinaryEyes.Common.Extensions;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace BubbleWarIV.Components
 {
@@ -20,8 +21,13 @@ namespace BubbleWarIV.Components
 
             var headset = Instantiate(HeadsetPrefab).SetName(HeadsetPrefab.name);
             DontDestroyOnLoad(headset.gameObject);
-            
+
+            yield return SceneManager.LoadSceneAsync(LocationScene, LoadSceneMode.Additive);
+            yield return new WaitUntil(() => GameLocation.Exists);
+
             headset.Fade.TurnTransparent();
+            SceneManager.SetActiveScene(GameLocation.Instance.gameObject.scene);
+            SceneManager.UnloadSceneAsync(gameObject.scene);
         }
     }
 }
