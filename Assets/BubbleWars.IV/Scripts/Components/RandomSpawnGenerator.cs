@@ -3,7 +3,7 @@ using BinaryEyes.Common.Data;
 using BinaryEyes.Common.Extensions;
 using UnityEngine;
 
-namespace BubbleWarIV.Components
+namespace BubbleWarsEp4.Components
 {
     public sealed class RandomSpawnGenerator
         : MonoBehaviour

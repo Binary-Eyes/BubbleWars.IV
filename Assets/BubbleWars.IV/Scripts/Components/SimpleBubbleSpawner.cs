@@ -1,8 +1,9 @@
 using System.Collections;
 using BinaryEyes.Common.Data;
+using BinaryEyes.Common.Extensions;
 using UnityEngine;
 
-namespace BubbleWarIV.Components
+namespace BubbleWarsEp4.Components
 {
     public sealed class SimpleBubbleSpawner
         : MonoBehaviour
@@ -11,7 +12,7 @@ namespace BubbleWarIV.Components
         public Interval SpawnSize;
         public Interval SpawnDistance;
         public Range SpawnCount;
-        public GameObject BubblePrefab;
+        public GameObject[] BubblePrefabs;
         private void Awake() => StartCoroutine(SpawnBubbles());
 
         private IEnumerator SpawnBubbles()
@@ -22,7 +23,8 @@ namespace BubbleWarIV.Components
             var count = SpawnCount.GetRandom();
             for (var i = 0; i < count; i++)
             {
-                var bubble = Instantiate(BubblePrefab);
+                var prefab = BubblePrefabs.GetRandom();
+                var bubble = Instantiate(prefab);
                 bubble.transform.position = transform.position + transform.forward*SpawnDistance.GetRandom();
                 bubble.transform.localScale = Vector3.one*SpawnSize.GetRandom();
                 yield return new WaitForSeconds(SpawnDelay.GetRandom());

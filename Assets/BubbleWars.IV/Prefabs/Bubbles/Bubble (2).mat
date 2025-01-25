@@ -20,7 +20,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Bubble (1)
+  m_Name: Bubble (2)
   m_Shader: {fileID: 4800000, guid: c0808836af116da4bac1e81e4177ece1, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
@@ -125,7 +125,7 @@ Material:
     m_Floats:
     - _AV: 0
     - _AlphaClip: 0
-    - _AlphaMode: 0.137
+    - _AlphaMode: 0.793
     - _Blend: 0
     - _BumpScale: 1
     - _ClearCoatMask: 0
@@ -162,20 +162,20 @@ Material:
     - _flow_strength: 0.5
     - _mat_angle: 0.21
     - _mat_scale: 1
-    - _pow: 9.28
+    - _pow: 12.46
     - _powh: 20
     - _tile: 1
     - _tileOffsetX: 0
     - _tileOffsetY: 0.248
     - _tileUV: 1.2
-    - rimWidth: 0.265
+    - rimWidth: 0
     m_Colors:
     - _BaseColor: {r: 0.8867924, g: 0.8867924, b: 0.8867924, a: 0.078431375}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _Color2: {r: 0.5, g: 0.5, b: 0.5, a: 1}
     - _Color3: {r: 0.5, g: 0.5, b: 0.5, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _MColor: {r: 0, g: 0.5660378, b: 0.01891865, a: 1}
-    - _RimColor: {r: 0.3301887, g: 0.11058207, b: 0.11058207, a: 1}
+    - _MColor: {r: 0.5647059, g: 0.016586917, b: 0, a: 1}
+    - _RimColor: {r: 0.4101139, g: 0.4150943, b: 0.23300102, a: 0.39607844}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
   m_BuildTextureStacks: []

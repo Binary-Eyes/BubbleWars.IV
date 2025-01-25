@@ -1,8 +1,9 @@
 using BinaryEyes.Common;
+using BinaryEyes.Common.Extensions;
 using UnityEngine;
 using UnityEngine.XR.Hands;
 
-namespace BubbleWarIV.Components
+namespace BubbleWarsEp4.Components
 {
     public sealed class Headset
         : SingletonBehaviour<Headset>
@@ -18,7 +19,14 @@ namespace BubbleWarIV.Components
         [Header("Features")]
         public Camera Camera;
         public HeadsetFade Fade;
+        public GameHead Head;
         public GameHand LeftHand;
         public GameHand RightHand;
+
+        protected override void Awake()
+        {
+            base.Awake();
+            Fade.SetActiveState(true);
+        }
     }
 }
