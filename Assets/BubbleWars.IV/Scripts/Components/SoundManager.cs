@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using BinaryEyes.Common;
+using BinaryEyes.Common.Extensions;
 using UnityEngine;
 
 namespace BubbleWarsEp4.Components
@@ -9,6 +10,10 @@ namespace BubbleWarsEp4.Components
         : SingletonBehaviour<SoundManager>
     {
         private readonly List<AudioSource> _sources = new(30);
+        public AudioClip[] BubblePops;
+
+        public void PlayBubblePop()
+            => PlaySound(BubblePops.GetRandom());
 
         public void PlaySound(AudioClip clip)
         {

@@ -1,4 +1,3 @@
-using BubbleWarsEp4.Components;
 using UnityEngine;
 
 namespace BubbleWarsEp4.Components
