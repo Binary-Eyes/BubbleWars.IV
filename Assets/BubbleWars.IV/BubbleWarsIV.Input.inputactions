@@ -1,0 +1,165 @@
+{
+    "name": "BubbleWarsIV.Input",
+    "maps": [
+        {
+            "name": "GameInput",
+            "id": "908237bf-bb59-4ff9-b77e-23c80547e8b9",
+            "actions": [
+                {
+                    "name": "HandPosition.Left",
+                    "type": "Value",
+                    "id": "13f07e06-7032-4dcc-88e9-4c22af2d89de",
+                    "expectedControlType": "Vector3",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "HandRotation.Left",
+                    "type": "Value",
+                    "id": "5ff7d3bf-9e97-4732-947e-a25fdcc3cea7",
+                    "expectedControlType": "Quaternion",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "HandTrackingState.Left",
+                    "type": "Value",
+                    "id": "51af27be-4e59-4479-be3a-17a2524b3637",
+                    "expectedControlType": "Integer",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "HandPosition.Right",
+                    "type": "Value",
+                    "id": "8accaf2b-a221-4d44-83d1-b579ca8e423a",
+                    "expectedControlType": "Vector3",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "HandRotation.Right",
+                    "type": "Value",
+                    "id": "37f3694c-bd9c-413c-afe2-542de327eb77",
+                    "expectedControlType": "Quaternion",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "HandlTrackingState.Right",
+                    "type": "Value",
+                    "id": "68b214f0-98b9-4acc-b1d6-204ffb991f0a",
+                    "expectedControlType": "Integer",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "UIClick",
+                    "type": "Button",
+                    "id": "361e1d7a-8111-452c-9e6a-5a2495258fd7",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "a5504487-89c2-47a2-804a-85a1b08be4ea",
+                    "path": "<OculusTouchController>{LeftHand}/pointerPosition",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "HandPosition.Left",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "7b2c4872-18e5-4c23-95b4-62d81a64ea9c",
+                    "path": "<OculusTouchController>{LeftHand}/pointerRotation",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "HandRotation.Left",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "aba6a92d-e980-4418-b9c5-4e81059f0e37",
+                    "path": "<OculusTouchController>{LeftHand}/trackingState",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "HandTrackingState.Left",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "970b7524-2f57-4328-be81-f1d2f6f45e5d",
+                    "path": "<OculusTouchController>{RightHand}/pointerPosition",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "HandPosition.Right",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "48be14f6-7bbe-4cf4-96ef-1c2c930e9bd6",
+                    "path": "<OculusTouchController>{RightHand}/pointerRotation",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "HandRotation.Right",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "1bc23d2d-c6c4-4aa8-8fb8-ee3f6075f1c4",
+                    "path": "<OculusTouchController>{RightHand}/trackingState",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "HandlTrackingState.Right",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "9152dfb2-4266-4462-a906-cf0fefc45ab5",
+                    "path": "<OculusTouchController>{RightHand}/primaryButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "UIClick",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "24aea7bf-5da7-4068-94a0-5732467b0501",
+                    "path": "<OculusTouchController>{RightHand}/triggerPressed",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "UIClick",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}
