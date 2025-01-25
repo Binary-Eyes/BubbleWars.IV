@@ -16,13 +16,16 @@ namespace BubbleWarIV.Components
 
         private IEnumerator SpawnBubbles()
         {
+            var initialDelay = new Interval(1.0f, 3.0f);
+            yield return new WaitForSeconds(initialDelay.GetRandom());
+
             var count = SpawnCount.GetRandom();
             for (var i = 0; i < count; i++)
             {
-                yield return new WaitForSeconds(SpawnDelay.GetRandom());
                 var bubble = Instantiate(BubblePrefab);
                 bubble.transform.position = transform.position + transform.forward*SpawnDistance.GetRandom();
                 bubble.transform.localScale = Vector3.one*SpawnSize.GetRandom();
+                yield return new WaitForSeconds(SpawnDelay.GetRandom());
             }
         }
     }
