@@ -12,8 +12,9 @@ GameObject:
   - component: {fileID: 2177554695928389421}
   - component: {fileID: 8797925376706876191}
   - component: {fileID: 1744689763910792388}
+  - component: {fileID: 5277153199957153337}
   - component: {fileID: -4012247393212929628}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Bubble (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -100,12 +101,24 @@ SphereCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &5277153199957153337
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5270876650484601509}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 700135110a7e2414883b231fde3e09a9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &-4012247393212929628
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -118,9 +131,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 28bb9d7f93cc4414a8ffd0f881e444f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  upwardSpeed: 0.5
-  driftSpeed: 0.3
-  driftRange: {x: 0.5, y: 1}
-  cameraBiasStrength: 1
-  rotationSpeed: 30
-  lifetime: 10
+  UpSpeed: 0.3
+  DriftSpeed: 2
+  DriftRange: {x: 5, y: 10}
+  PlayerBiasStrength: 30
+  RotationSpeed: 50
+  Lifetime: 10

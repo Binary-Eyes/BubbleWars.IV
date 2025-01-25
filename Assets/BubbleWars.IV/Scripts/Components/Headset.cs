@@ -16,6 +16,9 @@ namespace BubbleWarIV.Components
         public XRHandSkeletonDriver RightHandDriver;
 
         [Header("Features")]
+        public Camera Camera;
         public HeadsetFade Fade;
+        public GameHand LeftHand;
+        public GameHand RightHand;
     }
 }

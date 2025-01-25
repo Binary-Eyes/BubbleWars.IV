@@ -155,7 +155,7 @@ MonoBehaviour:
     Max: 6
   SpawnSize:
     Min: 0.1
-    Max: 0.15
+    Max: 0.2
   SpawnDistance:
     Min: 0.06
     Max: 0.07
