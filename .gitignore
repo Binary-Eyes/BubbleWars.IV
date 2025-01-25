@@ -9,6 +9,7 @@
 /[Ll]ogs/
 /[Mm]emoryCaptures/
 Assets/TextMesh Pro/
+Assets/_Testing/
 
 # Visual Studio cache directory
 .vs/
