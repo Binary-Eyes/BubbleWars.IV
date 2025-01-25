@@ -7,6 +7,7 @@ namespace BubbleWarIV.Components
     public sealed class Preloader
         : MonoBehaviour
     {
+        public Headset HeadsetPrefab;
         public string LocationScene;
 
         private void Awake()
@@ -16,6 +17,11 @@ namespace BubbleWarIV.Components
         {
             yield return null;
             this.LogMessage("PreparingGame");
+
+            var headset = Instantiate(HeadsetPrefab).SetName(HeadsetPrefab.name);
+            DontDestroyOnLoad(headset.gameObject);
+            
+            headset.Fade.TurnTransparent();
         }
     }
 }

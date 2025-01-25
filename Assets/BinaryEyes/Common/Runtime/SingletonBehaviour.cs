@@ -24,7 +24,6 @@ namespace BinaryEyes.Common
             throw new NullReferenceException($"failed to locate singleton instance: type={typeof(T).Name}");
         }
 
-
         protected virtual void Awake()
         {
             this.LogWakingUp();

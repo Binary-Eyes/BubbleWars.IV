@@ -51,7 +51,7 @@
                     "initialStateCheck": true
                 },
                 {
-                    "name": "HandlTrackingState.Right",
+                    "name": "HandTrackingState.Right",
                     "type": "Value",
                     "id": "68b214f0-98b9-4acc-b1d6-204ffb991f0a",
                     "expectedControlType": "Integer",
@@ -132,7 +132,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "HandlTrackingState.Right",
+                    "action": "HandTrackingState.Right",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
